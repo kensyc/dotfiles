@@ -64,11 +64,17 @@ override-redirect = true
 enable-ipc = true
 
 wm-name = polybar-tray
+wm-restack = bspwm
 
 width = 20
 height = 27
-offset-x = 98%
-offset-y = 37
+; Latest update broke window stack (tray goes below windows)
+; Until a workaround is found or its fixed, 
+; set tray inside main bar instead of below
+; offset-x = 98%
+; offset-y = 37
+offset-x = 85%
+offset-y = 0
 
 modules-right = placeholder
 

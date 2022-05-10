@@ -9,4 +9,6 @@ __pycache__
 .config/Thunar/accels.scm
 .config/zsh/plugins
 .zcompdump
+packer_compiled.lua
+btop.log
 
