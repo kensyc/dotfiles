@@ -1,8 +1,0 @@
-* {
-    red:                         %c1%;
-    blue:                        %c4%;
-    lightfg:                     %c13%;
-    lightbg:                     %c10%;
-    foreground:                  %c7%;
-    background:                  %c0%;
-}
