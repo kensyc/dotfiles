@@ -1,0 +1,17 @@
+frame_color = "%c7%"
+separator_color = "%c7%"
+
+[urgency_low]
+    msg_urgency = low
+    background = "%c12%"
+    foreground = "%c15%"
+
+[urgency_normal]
+    msg_urgency = normal
+    background = "%c10%"
+    foreground = "%c15%"
+
+[urgency_critical]
+    msg_urgency = critical
+    background = "%c1%"
+    foreground = "%c13%"

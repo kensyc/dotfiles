@@ -14,3 +14,7 @@
 	path = $HOME/.config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	branch = master
+[submodule "$HOME/.config/zsh/plugins/zsh-completions"]
+	path = $HOME/.config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+	branch = master

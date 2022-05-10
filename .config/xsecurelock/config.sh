@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+source $COLORSCHEMES/current/colors-xsecurelock.sh
+
+export XSECURELOCK_AUTH_BACKGROUND_COLOR="#1E1E2E"
+export XSECURELOCK_AUTH_FOREGROUND_COLOR="#C9CBFF"
+export XSECURELOCK_DIM_COLOR="#ffffff"
+export XSECURELOCK_FONT="JetBrains Mono"
+export XSECURELOCK_PASSWORD_PROMPT="cursor"
+export XSECURELOCK_SAVER=saver_mpv
+export XSECURELOCK_LIST_VIDEOS_COMMAND="find $XDG_CONFIG_HOME/xsecurelock/screensaver -type f"
+export XSECURELOCK_IMAGE_DURATION_SECONDS=15

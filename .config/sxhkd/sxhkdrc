@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
 
 # program launcher
 super + @space
@@ -13,6 +13,10 @@ super + @space
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# lock screen
+super + ctrl + l
+	xsecurelock
 
 #
 # bspwm hotkeys
@@ -37,6 +41,29 @@ super + y
 # swap the current node and the biggest node
 super + g
 	bspc node -s biggest
+
+# select parent
+super + p
+	bspc node -f @parent
+
+# rotate
+super + e
+	bspc node $(bspc query -N -n -n .!leaf || echo @/) -R 90
+
+# rotate parent
+super + alt + p
+	bspc node -f @parent && bspc node $(bspc query -N -n -n .!leaf || echo @/) -R 90
+
+#
+# audio volumes
+#
+super + {dead_circumflex,dollar}
+#	amixer -c 0 set Master {5%-,5%+}
+	sh -c "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 {-5%,+5%}"
+
+super + shift + {dead_circumflex,dollar}
+#	amixer -c 0 set Master {1%-,1%+}
+	sh -c "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume 0 {-1%,+1%}"
 
 #
 # state/flags
@@ -71,8 +98,8 @@ super + {i,o}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# super + {grave,Tab}
+# 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {u,p}
@@ -83,26 +110,6 @@ super + {u,p}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -119,3 +126,23 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# preselect
+#
+
+# preselect the direction
+# super + ctrl + {h,j,k,l}
+#	bspc node -p {west,south,north,east}
+#
+# preselect the ratio
+# super + ctrl + {1-9}
+#	bspc node -o 0.{1-9}
+#
+# cancel the preselection for the focused node
+# super + ctrl + space
+#	bspc node -p cancel
+#
+# cancel the preselection for the focused desktop
+# super + ctrl + shift + space
+#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel

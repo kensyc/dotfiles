@@ -1,1 +1,11 @@
 .repository
+.config/Slack
+.config/X11/.Xauthority
+__pycache__
+.zcompdump
+gthumb/history.xbel
+dconf/user
+pulse/
+!pulse/*.conf
+Thunar/accels.scm
+

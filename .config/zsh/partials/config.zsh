@@ -2,6 +2,7 @@
 HISTFILE=~/.cache/zsh/.histfile				# Path to file in which history is saved
 HISTSIZE=1000						# Approximate size of history available in shell
 SAVEHIST=10000						# Approximate size of history available in the history file
+ZLE_RPROMPT_INDENT=0
 
 # ZSH OPTIONS SET THROUGH THE INSTALL WIZARD
 setopt appendhistory					# On new zsh sessions, append history to history file instead of replacing it

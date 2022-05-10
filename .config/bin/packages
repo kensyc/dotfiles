@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+excludes=($(pacman -Qgq xorg) $(pacman -Qgq base-devel) linux linux-firmware base)
+packages=$(pacman -Qqe)
+
+declare -a result
+
+truncate -s 0 $HOME/.packages
+for package in ${packages[@]}; do
+    if [[ ! "${excludes[*]}" =~ "${package}" ]]; then
+        echo $package >> $HOME/.packages
+    fi
+done
+

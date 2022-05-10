@@ -8,6 +8,7 @@ function source-compiled() {
 
 source-compiled $ZDOTDIR/plugins/zsh-defer/zsh-defer.plugin.zsh
 
+zsh-defer source-compiled $ZDOTDIR/plugins/zsh-completions/zsh-completions.plugin.zsh
 zsh-defer source-compiled $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 zsh-defer source-compiled $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 zsh-defer source-compiled $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
