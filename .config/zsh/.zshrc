@@ -6,6 +6,9 @@ source ${ZDOTDIR}/partials/keybinds.zsh
 source ${ZDOTDIR}/partials/plugins.zsh
 source ${ZDOTDIR}/partials/alias.zsh
 
+# Add custom autocompletions
+fpath=(${ZDOTDIR}/autocomplete $fpath)
+
 # AUTOCOMPLETE
 autoload -Uz compinit
 zstyle ':completion:*' menu select

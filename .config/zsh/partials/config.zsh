@@ -1,5 +1,5 @@
 # HISTORY
-HISTFILE=~/.cache/zsh/.histfile				# Path to file in which history is saved
+HISTFILE=$XDG_CACHE_HOME/zsh/.histfile				# Path to file in which history is saved
 HISTSIZE=1000						# Approximate size of history available in shell
 SAVEHIST=10000						# Approximate size of history available in the history file
 ZLE_RPROMPT_INDENT=0
