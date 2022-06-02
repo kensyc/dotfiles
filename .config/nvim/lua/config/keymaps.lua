@@ -80,6 +80,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_document_symbols, buffopts)
     vim.keymap.set('n', '<leader>sl', require('telescope.builtin').diagnostics, buffopts)
     vim.keymap.set('n', '<leader>t', '<cmd>lua vim.lsp.buf.formatting()<CR>', buffopts)
+    vim.api.nvim_create_user_command("Format", vim.lsp.buf.formatting, {})
 end
 
 local cmp = require('cmp')

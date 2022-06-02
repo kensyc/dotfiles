@@ -31,6 +31,21 @@ local servers = {
     },
     intelephense = {},
     bashls = {},
+    pyright = {},
+    efm = {
+        init_options = {documentFormatting = true},
+        settings = {
+            rootMarkers = {'.git/'},
+            languages = {
+                python = {
+                    {formatCommand = 'black --fast -', formatStdin = true}
+                }
+            }
+        },
+        root_dir = require('lspconfig').util.root_pattern {'.git/', '.'},
+        filetypes = {'python'},
+        single_file_support = true,
+    }
 }
 
 local on_attach = require('config.keymaps').on_attach
