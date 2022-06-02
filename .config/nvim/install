@@ -1,0 +1,13 @@
+#!/bin/sh
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+nvim --headless \
+    -c 'autocmd User PackerComplete quitall' \
+    -c 'PackerSync'
+
+nvim --headless \
+    -c 'lua for k,v in pairs(require "plugin.lsp") do pcall(vim.fn.execute("LspInstall --sync " .. k)) end' \
+    -c q
+
+exit 0

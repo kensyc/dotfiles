@@ -1,4 +1,6 @@
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup {
+    automatic_installation = false
+}
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
@@ -57,3 +59,5 @@ for server, settings in pairs(servers) do
 
   require('lspconfig')[server].setup(settings)
 end
+
+return servers
