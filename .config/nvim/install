@@ -6,8 +6,12 @@ nvim --headless \
     -c 'autocmd User PackerComplete quitall' \
     -c 'PackerSync'
 
+servers=$(nvim --headless \
+    -c 'lua local output=""; for k,v in pairs(require "plugin.lsp") do output = output .. " " .. k end; print(output)' \
+    -c q 2>&1)
+
 nvim --headless \
-    -c 'lua for k,v in pairs(require "plugin.lsp") do pcall(vim.fn.execute("LspInstall --sync " .. k)) end' \
+    -c "LspInstall --sync $servers" \
     -c q
 
 exit 0
