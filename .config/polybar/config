@@ -96,7 +96,7 @@ type = custom/script
 type = custom/script
 exec = echo 
 
-click-left = bash $HOME/.config/polybar/toggle-tray.sh
+click-left = bash $HOME/.config/polybar/scripts/toggle-tray.sh
 
 [module/bspwm]
 type = internal/bspwm
@@ -148,6 +148,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
+interval = 1
+
 use-ui-max = false
 
 format-volume = <ramp-volume> <label-volume>
@@ -166,10 +168,10 @@ click-right = pavucontrol &
 [module/microphone]
 type = custom/script
 
-exec = ~/.config/polybar/scripts/pulseaudio-microphone.sh
+exec = ~/.config/polybar/scripts/pipewire-microphone.sh
 tail = true
 
-click-left = ~/.config/polybar/scripts/pulseaudio-microphone.sh --toggle &
+click-left = ~/.config/polybar/scripts/pipewire-microphone.sh --toggle &
 click-right = pavucontrol &
 
 [module/powermenu]
