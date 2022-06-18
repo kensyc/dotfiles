@@ -1,0 +1,4 @@
+#!/bin/sh
+
+LIGHT_BORDER='#EFF1F5'
+DARK_BORDER='#1E1D2F'
