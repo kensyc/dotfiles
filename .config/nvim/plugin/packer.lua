@@ -43,4 +43,10 @@ require('packer').startup(function(use)
     use 'numToStr/Comment.nvim'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
+
+    -- DB
+    use 'tpope/vim-dadbod'
+    use 'kristijanhusak/vim-dadbod-ui'
+    use 'kristijanhusak/vim-dadbod-completion'
+
 end)
