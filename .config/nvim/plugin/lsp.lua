@@ -47,7 +47,8 @@ local servers = {
         root_dir = require('lspconfig').util.root_pattern {'.git/', '.'},
         filetypes = {'python'},
         single_file_support = true,
-    }
+    },
+    dockerls = {}
 }
 
 local on_attach = require('config.keymaps').on_attach
