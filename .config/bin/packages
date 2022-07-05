@@ -12,3 +12,8 @@ for package in ${packages[@]}; do
     fi
 done
 
+# base-devel, linux, linux-firmware and base should've already been installed at
+# the pacstrap step in the arch install
+# only group left that should be installed is xorg
+echo "xorg" >> $HOME/.packages
+
