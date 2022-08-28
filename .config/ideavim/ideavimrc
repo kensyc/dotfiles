@@ -1,0 +1,4 @@
+set showmode
+set ignorecase
+set relativenumber
+set number

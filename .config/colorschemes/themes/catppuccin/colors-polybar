@@ -9,4 +9,6 @@ foreground-inactive = #575268
 
 alert = #F28FAD
 
+battery-discharging= #E5C890
+
 ; vim:ft=dosini

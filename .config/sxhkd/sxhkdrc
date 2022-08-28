@@ -2,9 +2,10 @@
 # wm independent hotkeys
 #
 
+#LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe 
 # terminal emulator
 super + Return
-	LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
+	kitty
 
 # program launcher
 super + @space
@@ -16,7 +17,7 @@ super + Escape
 
 # lock screen
 super + ctrl + l
-	xsecurelock
+	xset s activate
 
 #
 # bspwm hotkeys
@@ -108,8 +109,11 @@ super + {u,p}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
+	bspc {desktop -f} '^{1-9,10}'
+
+super + {1-9,0}
+	bspc {node -d} '^{1-9,10}'
 
 #
 # move/resize

@@ -7,3 +7,5 @@ image/webp=org.gnome.gThumb.desktop;
 
 [Default Applications]
 x-scheme-handler/tg=userapp-Telegram Desktop-5HIFJ1.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/postman=Postman.desktop

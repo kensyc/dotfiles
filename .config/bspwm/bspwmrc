@@ -14,7 +14,7 @@ source $HOME/.config/bin/set-wallpaper &
 picom &
 
 # Autostart desktop entries
-dex -a
+systemctl --user start autostart.target
 
 # Set Belgian keyboard layout
 setxkbmap be
@@ -25,8 +25,13 @@ setxkbmap -option caps:escape
 # Set last numlock state
 numlockx &
 
+# Launch lock package
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+
 # Launch sxhkd
-pgrep -x sxhkd > /dev/null || sxhkd &
+launch-sxhkd
+
+# pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Launch polybar
 $HOME/.config/polybar/launch.sh &
@@ -48,7 +53,7 @@ source ${COLORSCHEMES}/current/colors-fzf.sh
 #
 
 # Desktops
-bspc monitor -d                              1 2 3 4 5 6
+bspc monitor -d                              1 2 3 4 5 6 7
 
 # Config
 bspc config border_width                     0
@@ -86,3 +91,5 @@ bspc rule -a Gthumb state=floating border=off
 bspc rule -a TelegramDesktop desktop='^6' follow=on border=off
 bspc rule -a Slack desktop='^4' follow=on border=off
 bspc rule -a Pavucontrol border=off state=floating
+bspc rule -a jetbrains-phpstorm desktop='^2' follow=on border=off
+bspc rule -a Mysql-workbench-bin desktop='^2' follow=on border=off

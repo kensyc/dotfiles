@@ -35,14 +35,14 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-#font-0 = "Operator Mono:style=Book:pixelsize=9;2"
+;font-0 = "Operator Mono:style=Book:pixelsize=9;2"
 font-0 = "JetBrains Mono:style=Regular:pixelsize=9;2"
 font-1 = "Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular:pixelsize=8;2"
 font-2 = "Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid:pixelsize=8;2"
 font-3 = "Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular:pixelsize=8;2"
 
 modules-left = bspwm
-modules-right = arrow microphone pulseaudio date powermenu
+modules-right = arrow microphone pulseaudio battery date powermenu
 
 wm-restack = bspwm
 wm-name = polybar-main
@@ -73,7 +73,8 @@ height = 27
 ; set tray inside main bar instead of below
 ; offset-x = 98%
 ; offset-y = 37
-offset-x = 85%
+; offset-x = 83%
+offset-x = 1577
 offset-y = 0
 
 modules-right = placeholder
@@ -107,6 +108,7 @@ ws-icon-2 = "3;"
 ws-icon-3 = "4;"
 ws-icon-4 = "5;"
 ws-icon-5 = "6;"
+ws-icon-6 = "7;"
 
 format = <label-state> <label-mode>
 
@@ -173,6 +175,51 @@ tail = true
 
 click-left = ~/.config/polybar/scripts/pipewire-microphone.sh --toggle &
 click-right = pavucontrol &
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-low = <ramp-capacity> <animation-low>
+
+label-discharging-foreground = ${colors.battery-discharging}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = ${colors.battery-discharging}
+ramp-capacity-1-foreground = ${colors.battery-discharging}
+ramp-capacity-2-foreground = ${colors.battery-discharging}
+ramp-capacity-3-foreground = ${colors.battery-discharging}
+ramp-capacity-4-foreground = ${colors.battery-discharging}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+
+animation-charging-0-foreground = ${colors.foreground}
+animation-charging-1-foreground = ${colors.foreground}
+animation-charging-2-foreground = ${colors.foreground}
+animation-charging-3-foreground = ${colors.foreground}
+animation-charging-4-foreground = ${colors.foreground}
+
+animation-charging-framerate = 750
+
+animation-low-0 = !
+animation-low-1 = 
+animation-low-framerate = 200
+
+; poll-interval = 5
 
 [module/powermenu]
 type = custom/menu

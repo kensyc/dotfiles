@@ -8,8 +8,10 @@
 
 source "$COLORSCHEMES/current/colors-nvim-borders"
 
-kitty @ set-colors background=$LIGHT_BORDER
+pid=$(xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_PID\(CARDINAL\)/{print $NF}')
+
+kitty @ --to unix:@kitty.sock-$pid set-colors background=$LIGHT_BORDER
 
 nvim $1
 
-kitty @ set-colors background=$DARK_BORDER
+kitty @ --to unix:@kitty.sock-$pid set-colors background=$DARK_BORDER
