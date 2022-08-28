@@ -1,6 +1,5 @@
-require("nvim-lsp-installer").setup {
-    automatic_installation = false
-}
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
@@ -34,6 +33,7 @@ local servers = {
     intelephense = {},
     bashls = {},
     pyright = {},
+    -- jdtls = {},
     efm = {
         init_options = {documentFormatting = true},
         settings = {

@@ -6,7 +6,8 @@ require('packer').startup(function(use)
     use 'lewis6991/impatient.nvim'
 
     -- LSP, Autocomplete and Snippets
-    use 'williamboman/nvim-lsp-installer'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -15,6 +16,7 @@ require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
+    use 'mfussenegger/nvim-jdtls'
 
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -22,7 +24,10 @@ require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-file-browser.nvim' }
 
     -- Treesitter
-    use 'nvim-treesitter/nvim-treesitter'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
     -- File tree
