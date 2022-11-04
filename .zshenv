@@ -35,6 +35,7 @@ export DOCKER_CONFIG="$XDG_DATA_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
+export DOCKER_ENV="$XDG_CACHE_HOME/docker-environments"
 
 # Screensaver
 source $HOME/.config/xsecurelock/config.sh
@@ -45,4 +46,4 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 export PATH="$HOME/.config/bin:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
 
 # export environment variables which should not be committed
-source $HOME/.hiddenenv
+source $HOME/.hiddenenv_work

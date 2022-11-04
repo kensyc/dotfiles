@@ -4,6 +4,7 @@ image/png=firefox.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-5HIFJ1.desktop;
 image/jpeg=org.gnome.gThumb.desktop;
 image/webp=org.gnome.gThumb.desktop;
+application/xml=firefox.desktop;
 
 [Default Applications]
 x-scheme-handler/tg=userapp-Telegram Desktop-5HIFJ1.desktop

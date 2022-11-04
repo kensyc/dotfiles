@@ -4,6 +4,7 @@ require('packer').startup(function(use)
 
     -- Speed
     use 'lewis6991/impatient.nvim'
+    use 'nathom/filetype.nvim'
 
     -- LSP, Autocomplete and Snippets
     use "williamboman/mason.nvim"
@@ -17,6 +18,7 @@ require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
     use 'mfussenegger/nvim-jdtls'
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Telescope
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -46,8 +48,9 @@ require('packer').startup(function(use)
 
     -- Utility
     use 'numToStr/Comment.nvim'
-    use 'tpope/vim-surround'
+    use 'kylechui/nvim-surround'
     use 'tpope/vim-repeat'
+    use 'ellisonleao/glow.nvim'
 
     -- DB
     use 'tpope/vim-dadbod'

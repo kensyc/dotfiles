@@ -2,3 +2,16 @@ set showmode
 set ignorecase
 set relativenumber
 set number
+set clipboard+=unnamed
+set NERDTree
+
+nmap gi :action GotoImplementation<CR>
+
+let mapleader = " "
+
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+nnoremap <leader>o gt
+nnoremap <leader>i gT

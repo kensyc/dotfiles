@@ -2,7 +2,6 @@
 # wm independent hotkeys
 #
 
-#LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe 
 # terminal emulator
 super + Return
 	kitty
@@ -92,7 +91,7 @@ super + {p,b,comma,period}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.leaf
 
 # focus the next/previous desktop in the current monitor
 super + {i,o}

@@ -1,2 +1,3 @@
 local-php-security-checker
 .idea/*
+auth.json

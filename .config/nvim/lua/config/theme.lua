@@ -10,5 +10,6 @@ require('catppuccin').setup({
     }
 })
 
+-- macchiato, latte, frappe, macchiato, mocha
 vim.g.catppuccin_flavour = "latte"
 vim.cmd[[colorscheme catppuccin]]

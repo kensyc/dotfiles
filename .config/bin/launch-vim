@@ -6,12 +6,12 @@
 # :autocmd BufWinLeave * kitty @ set-colors background=$DARK_BORDER
 # 
 
-source "$COLORSCHEMES/current/colors-nvim-borders"
+# source "$COLORSCHEMES/current/colors-nvim-borders"
 
-pid=$(xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_PID\(CARDINAL\)/{print $NF}')
+# pid=$(xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_PID\(CARDINAL\)/{print $NF}')
 
-kitty @ --to unix:@kitty.sock-$pid set-colors background=$LIGHT_BORDER
+# kitty @ --to unix:@kitty.sock-$pid set-colors background=$LIGHT_BORDER
 
-nvim $1
+nvim $@
 
-kitty @ --to unix:@kitty.sock-$pid set-colors background=$DARK_BORDER
+# kitty @ --to unix:@kitty.sock-$pid set-colors background=$DARK_BORDER

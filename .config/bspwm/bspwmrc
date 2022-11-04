@@ -53,7 +53,7 @@ source ${COLORSCHEMES}/current/colors-fzf.sh
 #
 
 # Desktops
-bspc monitor -d                              1 2 3 4 5 6 7
+bspc monitor eDP-1 -d                        1 2 3 4 5 6 7
 
 # Config
 bspc config border_width                     0

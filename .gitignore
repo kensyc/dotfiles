@@ -1,6 +1,6 @@
 __pycache__
 .repository
-.hiddenenv
+.hiddenenv*
 .zcompdump
 packer_compiled.lua
 btop.log
