@@ -85,3 +85,4 @@ bspc rule -a firefox desktop='^3' follow=on border=off
 bspc rule -a feh state=floating border=off
 bspc rule -a Slack desktop='^4' follow=on border=off
 bspc rule -a Pavucontrol border=on state=floating
+bspc rule -a jetbrains-phpstorm desktop='^2' follow=on border=off
