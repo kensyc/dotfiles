@@ -1,0 +1,16 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """$time"""
+
+[character]
+success_symbol = '[➜](bold green)'
+vimcmd_symbol = '[](bold green)'
+error_symbol = '[✖](bold red)'
+format = '  $symbol '
+
+[directory]
+format = '  [$path]($style)[$read_only]($read_only_style) '
+
+[time]
+format = '[$time]($style)  '
+disabled = false

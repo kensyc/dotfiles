@@ -4,7 +4,8 @@
 export BROWSER="firefox"
 export EDITOR="nvim"
 export FMANAGER="ranger"
-export ZTHEME="spaceship"
+export ZTHEME="starship"
+export TERMINAL="kitty"
 
 # default directories
 export XINITRC="$HOME/.config/X11/.xinitrc"
@@ -35,7 +36,11 @@ export DOCKER_CONFIG="$XDG_DATA_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
-export DOCKER_ENV="$XDG_CACHE_HOME/docker-environments"
+
+# Dev tools
+export DEV_TOOLS_PROJECTS_DIR="$HOME/projects"
+export DEV_TOOLS_CACHE_DIR="$XDG_CACHE_HOME/docker-environments"
+export DEV_TOOLS_VERBOSE=1
 
 # Screensaver
 source $HOME/.config/xsecurelock/config.sh

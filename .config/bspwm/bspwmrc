@@ -31,8 +31,6 @@ xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 # Launch sxhkd
 launch-sxhkd
 
-# pgrep -x sxhkd > /dev/null || sxhkd &
-
 # Launch polybar
 $HOME/.config/polybar/launch.sh &
 
@@ -53,11 +51,11 @@ source ${COLORSCHEMES}/current/colors-fzf.sh
 #
 
 # Desktops
-bspc monitor eDP-1 -d                        1 2 3 4 5 6 7
+bspc monitor primary -d                        1 2 3 4 5 6 7 8
 
 # Config
 bspc config border_width                     0
-bspc config window_gap                       10
+bspc config window_gap                       5
 bspc config split_ratio                      0.52
 
 # double borders
@@ -84,11 +82,6 @@ bspc config focused_border_color             $border_color
 
 # Rules
 bspc rule -a firefox desktop='^3' follow=on border=off
-bspc rule -a Thunar desktop='^5' follow=on border=off
 bspc rule -a feh state=floating border=off
-bspc rule -a Evince state=floating border=off
-bspc rule -a Gthumb state=floating border=off
-bspc rule -a TelegramDesktop desktop='^6' follow=on border=off
 bspc rule -a Slack desktop='^4' follow=on border=off
-bspc rule -a Pavucontrol border=off state=floating
-bspc rule -a jetbrains-phpstorm desktop='^2' follow=on border=off
+bspc rule -a Pavucontrol border=on state=floating

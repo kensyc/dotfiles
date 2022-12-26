@@ -1,4 +1,5 @@
-alias vim='~/.config/bin/launch-vim'
+alias vim='/usr/bin/nvim'
+alias ovim='/usr/bin/vim'
 alias l='ls -lah'
 alias rm='rm -i'
 alias diff='kitty +kitten diff'

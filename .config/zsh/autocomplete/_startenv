@@ -1,0 +1,3 @@
+#compdef startenv
+
+_files -W $DEV_TOOLS_CACHE_DIR

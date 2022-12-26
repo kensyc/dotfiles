@@ -23,7 +23,6 @@ btop.log
 !.config/kitty
 !.config/mimeapps.list
 !.config/npm
-!.config/nvim
 !.config/picom
 !.config/polybar
 !.config/ranger
