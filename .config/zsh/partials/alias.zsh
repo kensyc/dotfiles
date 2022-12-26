@@ -8,7 +8,7 @@ alias sshconfig='vim $HOME/.ssh/config'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias kssh='kitty +kitten ssh'
 alias mysql-workbench='mysql-workbench --configdir=$XDG_DATA_HOME/mysql/workbench'
-alias start='startenv -d $HOME/.config/dockerenv/defaults/dockerwest'
+alias start='startenv -d $HOME/.config/dev-tools/defaults/dockerwest'
 
 function config() {
     source $HOME/.hiddenenv_home
