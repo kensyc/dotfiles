@@ -15,3 +15,11 @@ nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>o gt
 nnoremap <leader>i gT
+
+nnoremap <leader>ne :NERDTree<CR>
+" nnoremap <leader>nf :NERDTreeFocus<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+" nnoremap <leader>nf :NERDTreeClose<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
+" nnoremap <leader>nf :NERDTreeRefreshRoot<CR>
+

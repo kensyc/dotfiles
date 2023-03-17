@@ -2,3 +2,5 @@ local-php-security-checker
 .idea/*
 auth.json
 __pycache__
+password_vault
+vault_password
