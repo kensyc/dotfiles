@@ -14,7 +14,7 @@ source $HOME/.config/bin/set-wallpaper &
 picom &
 
 # Autostart desktop entries
-systemctl --user start autostart.target
+systemctl --user start autostart-bspwm.target
 
 # Set Belgian keyboard layout
 setxkbmap us

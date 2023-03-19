@@ -1,5 +1,23 @@
 #!/bin/zsh
 
+# Desktop environment
+
+
+# Gnome on X11
+export WINDOW_MANAGER="gnome-session"
+export XDG_SESSION_TYPE="x11"
+export GDK_BACKEND="x11"
+
+# Gnome on wayland
+# export WINDOW_MANAGER="gnome-session"
+# export MOZ_ENABLE_WAYLAND=1
+# export QT_QPA_PLATORM="wayland"
+# export XDG_SESSION_TYPE="wayland"
+
+# bspwm
+# export WINDOW_MANAGER="bspwm"
+# export XDG_SESSION_TYPE="x11"
+
 # default programs
 export BROWSER="firefox"
 export EDITOR="nvim"
@@ -49,6 +67,7 @@ export KEYTIMEOUT=1
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 export PATH="$HOME/.config/bin:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
+export GTK_THEME="Catppuccin-Mocha-Standard-Flamingo-Dark"
 
 # export environment variables which should not be committed
 source $HOME/.hiddenenv_work

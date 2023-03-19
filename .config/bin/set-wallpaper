@@ -1,7 +1,14 @@
 #!/usr/bin/bash
 
 update_wallpaper() {
-    feh --no-fehbg --bg-fill $XDG_CONFIG_HOME/feh/wallpaper
+    if [[ $WINDOW_MANAGER == "bspwm" ]]; then
+        feh --no-fehbg --bg-fill "$XDG_CONFIG_HOME"/feh/wallpaper
+    fi
+
+    if [[ $WINDOW_MANAGER == "gnome-session" ]]; then
+        image=$(ls "$XDG_CONFIG_HOME/feh/wallpaper/")
+        gsettings set org.gnome.desktop.background picture-uri-dark file://"$XDG_CONFIG_HOME"/feh/wallpaper/"$image"
+    fi
 
     exit 0
 }
@@ -14,7 +21,7 @@ if [[ $1 == "--update" || $1 == "-u" ]]; then
         echo "Wallpaper does not exist. Wallpapers:"
         echo ""
         wallpapers=$(ls $WALLPAPERS)
-        printf "%s\n" ${wallpapers[@]}
+        printf "%s\n" "${wallpapers[@]}"
         exit 1
     fi
 

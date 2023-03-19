@@ -33,11 +33,14 @@ right_format = """$time"""
 success_symbol = '[➜](bold green)'
 vimcmd_symbol = '[](bold green)'
 error_symbol = '[✖](bold red)'
-format = '  $symbol '
+format = '$symbol '
+# format = '  $symbol '
 
 [directory]
-format = '  [$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
+# format = '  [$path]($style)[$read_only]($read_only_style) '
 
 [time]
-format = '[$time]($style)  '
+format = '[$time]($style)'
 disabled = false
+# format = '[$time]($style)  '
