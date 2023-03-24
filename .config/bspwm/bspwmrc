@@ -16,17 +16,19 @@ picom &
 # Autostart desktop entries
 systemctl --user start autostart-bspwm.target
 
-# Set Belgian keyboard layout
+# keyboard stuff and lockscreen could be added to autostart-bspwm
+
+# Set qwrty keyboard layout
 setxkbmap us
 
 # Use caps for escape
 setxkbmap -option caps:escape
 
-# Set last numlock state
-numlockx &
-
 # Launch lock package
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+
+# Set last numlock state
+numlockx &
 
 # Launch sxhkd
 launch-sxhkd
@@ -42,9 +44,6 @@ xsetroot -cursor_name left_ptr
 
 # border color
 source $HOME/.config/colorschemes/current/colors-bspwm.sh
-
-# FZF colors
-source ${COLORSCHEMES}/current/colors-fzf.sh
 
 #
 # CONFIGURATION

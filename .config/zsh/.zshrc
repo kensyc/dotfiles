@@ -17,4 +17,10 @@ compinit
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
 
+# FZF
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source ${COLORSCHEMES}/current/colors-fzf.sh
+
+
 source ${ZDOTDIR}/themes/${ZTHEME}/post-zshrc.zsh

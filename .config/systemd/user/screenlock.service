@@ -2,7 +2,7 @@
 PartOf=graphical-session.target
 After=graphical-session.target
 CollectMode=inactive-or-failed
-Description=Startup script
+Description=Screenlock
 
 [Service]
 Type=simple
@@ -10,3 +10,4 @@ ExecStart=xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 [Install]
 WantedBy=gnome-session.target
+WantedBy=autostart-bspwm.target

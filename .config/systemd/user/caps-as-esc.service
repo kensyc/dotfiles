@@ -6,7 +6,8 @@ Description=Startup script
 
 [Service]
 Type=simple
-ExecStart=/home/kensy/.config/bin/startup.sh
+ExecStart=setxkbmap -option caps:escape
 
 [Install]
 WantedBy=gnome-session.target
+WantedBy=autostart-bspwm.target
