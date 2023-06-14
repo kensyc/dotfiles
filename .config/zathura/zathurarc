@@ -1,6 +1,0 @@
-include ../colorschemes/current/colors-zathura
-
-set selection-clipboard         clipboard
-
-set recolor                     "false"
-set recolor-keephue             "false"
