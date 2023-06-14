@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-excludes=($(pacman -Qgq xorg) $(pacman -Qgq base-devel) linux linux-firmware base)
+excludes=($(pacman -Qgq xorg) linux linux-firmware base base-devel)
 packages=$(pacman -Qqe)
 
 declare -a result

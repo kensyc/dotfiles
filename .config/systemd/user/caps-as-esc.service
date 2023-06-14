@@ -6,7 +6,7 @@ Description=Startup script
 
 [Service]
 Type=simple
-ExecStart=setxkbmap -option caps:escape
+ExecStart=/usr/bin/setxkbmap -option caps:escape
 
 [Install]
 WantedBy=gnome-session.target
