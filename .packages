@@ -42,11 +42,13 @@ git
 glow
 gnome-browser-connector
 gnome-control-center
+gnome-disk-utility
 gnome-keyring
 gnome-shell
 gnome-shell-extension-appindicator
+gnome-shell-extension-forge
 gnome-shell-extension-just-perfection-desktop
-gnome-shell-extension-pop-shell-git
+gnome-shell-extension-unite
 gnome-shell-extensions
 go
 google-chrome
@@ -114,6 +116,7 @@ rofi
 rsync
 seahorse
 sed
+sequoia-sq
 slack-desktop
 soapui
 spaceship-prompt-git
