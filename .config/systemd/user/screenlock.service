@@ -10,4 +10,3 @@ ExecStart=xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 [Install]
 WantedBy=gnome-session.target
-WantedBy=autostart-bspwm.target

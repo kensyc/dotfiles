@@ -1,22 +1,32 @@
 #!/bin/zsh
 
 # Desktop environment
+export DESKTOP_ENVIRONMENT="bspwm"
 
+local desktop_environments=("gnome_x11" "gnome_wayland" "bspwm")
 
-# Gnome on X11
-export WINDOW_MANAGER="gnome-session"
-export XDG_SESSION_TYPE="x11"
-export GDK_BACKEND="x11"
+# fallback if wrong value was entered when setting DE
+if [[ ! ${desktop_environments[@]} =~ $DE ]]; then
+    export DESKTOP_ENVIRONMENT="gnome_x11"
+fi
 
-# Gnome on wayland
-# export WINDOW_MANAGER="gnome-session"
-# export MOZ_ENABLE_WAYLAND=1
-# export QT_QPA_PLATORM="wayland"
-# export XDG_SESSION_TYPE="wayland"
+if [[ "$DESKTOP_ENVIRONMENT" = "gnome_x11" ]]; then
+    export WINDOW_MANAGER="gnome-session"
+    export XDG_SESSION_TYPE="x11"
+    export GDK_BACKEND="x11"
+fi
 
-# bspwm
-# export WINDOW_MANAGER="bspwm"
-# export XDG_SESSION_TYPE="x11"
+if [[ "$DESKTOP_ENVIRONMENT" = "gnome_wayland" ]]; then
+    export WINDOW_MANAGER="gnome-session"
+    export MOZ_ENABLE_WAYLAND=1
+    export QT_QPA_PLATORM="wayland"
+    export XDG_SESSION_TYPE="wayland"
+fi
+
+if [[ "$DESKTOP_ENVIRONMENT" = "bspwm" ]]; then
+    export WINDOW_MANAGER="bspwm"
+    export XDG_SESSION_TYPE="x11"
+fi
 
 # default programs
 export BROWSER="firefox"

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# bspc subscribe monitor | while read -r line; do
+#     echo $line >> /tmp/debug.output
+#     case $line in
+#         # monitor_add*)
+#         #     ;;
+#         monitor_remove*)
+#             xrandr --listactivemonitors >> /tmp/debug.output
+#             move-desktops-to-monitor
+#             ;;
+#         *)
+#             ;;
+#     esac
+# done
+

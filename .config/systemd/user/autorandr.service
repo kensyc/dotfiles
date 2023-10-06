@@ -9,3 +9,6 @@ ExecStart=/usr/bin/autorandr --batch --change --default default
 Type=oneshot
 RemainAfterExit=false
 KillMode=process
+
+[Install]
+WantedBy=autostart-bspwm.target

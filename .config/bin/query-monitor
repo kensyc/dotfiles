@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+usage() {
+cat <<- EOF
+Usage: 
+    query-monitor [-c|--correct] | [-p|--primary] | [-s|--side] | [-h|--help]
+
+Options:
+    -c, --count      Number of monitors
+    -p, --primary    Name of primary monitor
+    -s, --side       Name of side monitor
+    -h, --help       Show this message
+EOF
+}
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -c | --count )
+            # number of monitors
+            xrandr --listactivemonitors | awk '/Monitors/ {print $2}'
+
+            exit 0
+            ;;
+        -p | --primary )
+            # name of primary monitor
+            xrandr --listactivemonitors | awk '/*/ {print $4}'
+
+            exit 0
+            ;;
+        -s | --side )
+            # name of side monitor
+            xrandr --listactivemonitors | awk '!/*|Monitors*/ {print $4}'
+
+            exit 0
+            ;;
+        * )
+            usage
+            exit 1
+            ;;
+    esac
+done
+
+

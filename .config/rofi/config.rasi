@@ -14,6 +14,12 @@ configuration{
     display-window: " 﩯  window";
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
+    kb-mode-next: "Alt+o,Control+Tab";
+    kb-mode-previous: "Alt+i,Control+ISO_Left_Tab";
+    kb-row-left: "Alt+h,Control+Page_Up";
+    kb-row-right: "Alt+l,Control+Page_Down";
+    kb-row-up: "Alt+k,Up,Control+p";
+    kb-row-down: "Alt+j,Down,Control+n";
 }
 
 @theme "~/.config/colorschemes/current/colors-rofi.rasi"

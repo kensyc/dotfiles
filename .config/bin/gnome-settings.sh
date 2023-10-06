@@ -15,6 +15,8 @@ if [[ $1 == get ]]; then
         done
     done
 
+    echo "gsettings set org.gnome.desktop.input-sources xkb-options \"['caps:swapescape']\"" >> "$result"
+
     exit 0
 fi
 

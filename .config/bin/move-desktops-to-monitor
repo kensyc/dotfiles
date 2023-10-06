@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+
+usage() {
+cat <<- EOF
+Move desktops from one monitor to another. Useful when disconnecting a monitor
+and moving all nodes from a monitor to the monitor which remains
+
+Usage:
+    move-desktops-to-monitor <from_monitor> <to_monitor>
+
+Options:
+    from_monitor  Default DP-4
+    to_monitor    Default eDP-1
+EOF
+}
+
+if [[ "$1" = "--help" ]]; then
+    usage
+    exit 1
+fi
+
+if [[ $[#] -ne 0 && $[#] -ne 2 ]]; then
+    usage
+    exit 1
+fi
+
+from_monitor="DP-4"
+if [[ -n $1 ]]; then
+    from_monitor=$1
+fi
+
+to_monitor="eDP-1"
+if [[ -n $2 ]]; then
+    to_monitor=$2
+fi
+
+typeset -A desktop_hash
+
+desktop_ids=($(bspc query -D))
+desktop_names=($(bspc query -D --names))
+desktop_hash=("${(@)desktop_ids:^desktop_names}")
+
+desktops_from=($(bspc query -D -m $from_monitor))
+desktops_to=($(bspc query -D -m $to_monitor))
+
+for desktop in "${desktops_from[@]}"; do
+    nodes=($(bspc query -N -d $desktop))
+
+    for node in "${nodes[@]}"; do
+        index=$desktop_hash[$desktop]
+        bspc node "$node" -m $to_monitor -d "$desktops_to[$index]"
+    done
+done
+
+exit 0

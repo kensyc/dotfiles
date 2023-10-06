@@ -26,9 +26,13 @@ Print
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + shift + {q,r}
-	bspc {quit,wm -r}
+# quit bspwm
+super + shift + q
+	bspc quit
+
+# restart bspwm
+super + shift + r
+	bspc wm -r; #launch-polybar;
 
 # close and kill
 super + {_,shift + }w
@@ -62,6 +66,19 @@ super + alt + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+super + {p,n}
+    bspc monitor -f {prev,next}
+
+# focus or send to the next/previous monitor
+super + {p,n}
+    bspc monitor -f {prev,next}
+
+super + shift + {p,n}
+    bspc node -m {prev,next} --follow
+
+super + alt + {p,n}
+    bspc desktop -m {prev,next} --follow
+
 # focus the node for the given path jump
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
@@ -82,10 +99,10 @@ super + {u,d}
 
 # focus or send to the given desktop
 super + {1-9,0}
-    bspc {desktop -f} '^{1-9,10}'
+    bspc desktop -f {1.local, 2.local, 3.local, 4.local, 5.local, 6.local, 7.local, 8.local}
 
 super + shift + {1-9,0}
-	bspc {node -d} '^{1-9,10}'
+	bspc node -d {1.local, 2.local, 3.local, 4.local, 5.local, 6.local, 7.local, 8.local} --follow
 
 #
 # move/resize
