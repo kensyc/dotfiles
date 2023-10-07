@@ -12,6 +12,7 @@ fpath=(${ZDOTDIR}/autocomplete $fpath)
 # AUTOCOMPLETE
 autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'r:|?=**'
 compinit
 
 # Completion for kitty
