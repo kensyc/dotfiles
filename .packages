@@ -92,6 +92,7 @@ pipewire-pulse
 polybar
 postman-bin
 python-docker
+python-dotenv
 python-pillow
 python-pip
 ranger
