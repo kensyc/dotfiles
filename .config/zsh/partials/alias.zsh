@@ -10,6 +10,7 @@ alias kssh='kitty +kitten ssh'
 alias mysql-workbench='mysql-workbench --configdir=$XDG_DATA_HOME/mysql/workbench'
 alias start='startenv -d $HOME/.config/dev-tools/defaults/dockerwest'
 alias gdiff='git difftool --no-symlinks --dir-diff'
+alias ranger='ranger --choosedir=$XDG_CONFIG_HOME/ranger/.rangerdir; LASTDIR=`cat $XDG_CONFIG_HOME/ranger/.rangerdir`; cd "$LASTDIR"'
 
 function config() {
     source $HOME/.hiddenenv_home

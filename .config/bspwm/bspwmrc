@@ -58,7 +58,7 @@ source $HOME/.config/colorschemes/current/colors-bspwm.sh
 #
 
 # Desktops
-if [ "$(query-monitor -c)" -gt 1 ]; then
+if [ "$(query-monitor -c)" -gt 1 ] && [ "$(query-monitor -m)" = 0 ]; then
     bspc monitor "$(query-monitor --primary)" -d  1 2 3 4 5 6 7 8
     bspc monitor "$(query-monitor --side)"    -d  1 2 3 4 5 6 7 8
 else

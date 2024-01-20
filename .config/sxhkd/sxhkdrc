@@ -66,6 +66,9 @@ super + alt + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+super + a; {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
 super + {p,n}
     bspc monitor -f {prev,next}
 

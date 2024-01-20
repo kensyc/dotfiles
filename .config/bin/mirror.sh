@@ -1,5 +1,6 @@
 #!/bin/bash
 
+common_resolution=$(xrandr -q | grep -vE 't' | awk 'a[$1]++{print $1}' | sed -n 1p)
 read -r -a monitors <<< "$(xrandr -q | grep '\bconnected' | awk 'ORS=" " {print $1}')"
 
 if [[ ${monitors[0]} != "eDP-1" ]]; then
@@ -8,6 +9,8 @@ if [[ ${monitors[0]} != "eDP-1" ]]; then
     exit 1
 fi
 
-xrandr --output "${monitors[0]}" --primary --mode 1920x1080 --pos 0x0 --rotate normal --output "${monitors[1]}" --mode 1920x1080 --pos 0x0 --rotate normal --same-as "${monitors[0]}"
+xrandr --output "${monitors[0]}" --primary --mode "$common_resolution" --pos 0x0 --rotate normal --output "${monitors[1]}" --mode "$common_resolution" --pos 0x0 --rotate normal --same-as "${monitors[0]}"
 
-bspc wm -O "${monitors[@]}"
+bspc wm -r
+sleep 10
+bspc desktop Desktop --remove

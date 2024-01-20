@@ -2,7 +2,7 @@ set showmode
 set ignorecase
 set relativenumber
 set number
-set clipboard+=unnamed
+" set clipboard+=unnamed
 set NERDTree
 set visualbell
 set surround
@@ -23,24 +23,40 @@ vnoremap \ :action Replace<CR>
 nnoremap gb :action Annotate<CR>
 nnoremap gp :action GotoSuperMethod<CR>
 nnoremap gs :action ParameterInfo<CR>
-nnoremap <leader>m :action MoveEditorToOppositeTabGroup<CR>
+nnoremap gt :action GotoTest<CR>
 nnoremap <leader>df :action ShowErrorDescription<CR>
+nnoremap <leader>dd :action ActivateProblemsViewToolWindow<CR>
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap <leader>n :action SelectInProjectView<CR>
-nnoremap <leader>yr :action CopyReference<CR>
 nnoremap gr :action FindUsages<CR>
 nnoremap <leader>ca :action Generate<CR>
+nnoremap <leader>cp :action PhpNewClass<CR>
+nnoremap <leader>cr :action CopyReference<CR>
+nnoremap <leader>cc :action CopyContentRootPath<CR>
 nnoremap gh viw:action GotoClass<CR>
+nnoremap <leader>P "_dP
+vnoremap <leader>P "_dP
+nnoremap <leader>p "+p
+nnoremap <leader>y "+y
+vnoremap <leader>p "+p
+vnoremap <leader>y "+y
+
+nnoremap <leader>gr :action Git.ResolveConflicts<CR>
 
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
-nnoremap <leader>L :action MoveEditorToOppositeTabGroup<CR>
-nnoremap <leader>H :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <leader>J :action TabShiftActions.ShiftDown<CR>
+nnoremap <leader>H :action TabShiftActions.ShiftLeft<CR>
+nnoremap <leader>L :action TabShiftActions.ShiftRight<CR>
+nnoremap <leader>K :action TabShiftActions.ShiftUp<CR>
+nnoremap <leader>m :action TabShiftActions.ToggleMaximizeRestore<CR>
+nnoremap <leader>M :action tabshifter.Actions.EqualSizeSplit<CR>
 nnoremap <leader>o gt
 nnoremap <leader>i gT
 vnoremap <leader>fo :action ReformatCode<CR>
+nnoremap <leader>fo vip :action ReformatCode<CR>
 nnoremap <leader>fb :action RecentFiles<CR>
 nnoremap <leader>q <C-w>c
 
@@ -53,4 +69,3 @@ vnoremap gc :action CommentByLineComment<CR>
 " nnoremap <leader>nf :NERDTreeClose<CR>
 " nnoremap <vleader>nf :NERDTreeFind<CR>
 " nnoremap <leader>nf :NERDTreeRefreshRoot<CR>
-

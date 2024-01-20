@@ -12,13 +12,13 @@
 |vertical split         | :vs(plit)                             |
 |horizontal split       | :sp(lit)                              |
 |                       |                                       |
-|Move window down       | ctrl+w J                              |
-|Move window up         | ctrl+w K                              |
-|Move window right      | ctrl+w L                              |
-|Move window left       | ctrl+w H                              |
+|Move window down       | ctrl+w shift+j                        |
+|Move window up         | ctrl+w shift+k                        |
+|Move window right      | ctrl+w shift+l                        |
+|Move window left       | ctrl+w shift+h                        |
 |                       |                                       |
-|Resize window width    | ctrl+H/L, ctrl+w </>                  |
-|Resize window height   | ctrl+J/K, ctrl+w +/-                  |
+|Resize window width    | alt+shift+h/l, ctrl+w </>             |
+|Resize window height   | alt+shift+j/k, ctrl+w +/-             |
 |                       |                                       |
 |Close window           | :q                                    |
 |close tab              | space+q                               |
@@ -79,10 +79,8 @@
 |Move pane right        | ctrl+a }                              |
 |Move pane left         | ctrl+a {                              |
 |                       |                                       |
-|Resize width           | ctrl+a ctrl+Left/ctrl+Right           |
-|Resize width+          | ctrl+a alt+Left/alt+Right             |
-|Resize height          | ctrl+a ctrl+Up/ctrl+Down              |
-|Resize height+         | ctrl+a alt+Up/alt+Down                |
+|Resize width           | ctrl+a alt+l/alt+h                    |
+|Resize height          | ctrl+a alt+k/alt+j                    |
 |                       |                                       |
 |Close pane             | ctrl+d, ctrl+a x                      |
 |close tab              | ctrl+d, ctrl+a &                      |
@@ -107,10 +105,7 @@
 |Close pane             | :q/ctrl+f4                            |
 |close tab              | :q, ctrl+f4                           |
 |                       |                                       |
-|Move pane down         | -                                     |
-|Move pane up           | -                                     |
-|Move pane righ         | -                                     |
-|Move pane left         | -                                     |
+|Swap panes             | space+m                               |
 |                       |                                       |
 |Resize width           | alt+b alt+h/l                         |
 |Resize height          | alt+b alt+k/j                         |
@@ -118,7 +113,7 @@
 |tab right              | space+o                               |
 |tab left               | space+i                               |
 
-## Bspwm/Kitty
+## Bspwm
 
 |                       |                                       |
 |-----------------------|---------------------------------------|
@@ -137,10 +132,26 @@
 |Move node left         | super+shift+h                         |
 |Move node to desktop   | super+shift+[1-7]                     |
 |                       |                                       |
-|Resize width           | super+alt+h/l | super+alt+shift+h/l   |
-|Resize height          | super+alt+j/k | super+alt+shift+j/k   |
+|Resize width           | super+alt+h/l | super+ctrl+h/l        |
+|Resize height          | super+alt+j/k | super+ctrl+j/k        |
 |                       |                                       |
 |desktop right          | super+o                               |
 |desktop left           | super+i                               |
 |                       |                                       |
-|search                 | ctrl+shift+h                          |
+|monitor next           | super + n                             |
+|monitor previous       | super + p                             |
+|                       |                                       |
+
+## Kitty
+|                       |                                       |
+|-----------------------|---------------------------------------|
+|node down              | ctrl+shift+j                          |
+|node up                | ctrl+shift+k                          |
+|node right             | ctrl+shift+l                          |
+|node left              | ctrl+shift+h                          |
+|                       |                                       |
+|Close node             | ctrl+shift+w                          |
+|                       |                                       |
+|Resize                 | ctrl+shift+r                          |
+|                       |                                       |
+|search                 | ctrl+shift+m                          |
