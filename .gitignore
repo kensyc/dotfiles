@@ -29,5 +29,7 @@ btop.log
 !.config/xsecurelock
 !.config/zsh
 !.config/gnome-settings
+!.config/xkb
+!.config/xplugd
 
 .config/systemd/user/*.wants

@@ -1,0 +1,4 @@
+Rules   = "evdev"
+Model   = "pc105"
+Layout  = "us"
+Options = "caps:escape,compose:rctrl,lv3:ralt_switch,eurosign:5"
