@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "alisjef;oasliejf" >> ~/test
+
+bspc wm -r

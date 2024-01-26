@@ -8,6 +8,7 @@ btop.log
 .config/*
 
 # Explicitly allow which config to persist
+!.config/autorandr
 !.config/bin
 !.config/bspwm
 !.config/colorschemes
@@ -29,6 +30,8 @@ btop.log
 !.config/xsecurelock
 !.config/zsh
 !.config/gnome-settings
+!.config/wireplumber
+!.config/pipewire
 !.config/xkb
 !.config/xplugd
 
