@@ -36,3 +36,4 @@ btop.log
 !.config/xplugd
 
 .config/systemd/user/*.wants
+.config/git/user_work.inc

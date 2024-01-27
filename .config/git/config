@@ -15,3 +15,12 @@
 
 [init]
 	defaultBranch = main
+[include]
+    path = ~/.config/git/user_work.inc
+
+[includeIf "gitdir:~/private/**/.git"]
+    path = ~/.config/git/user_home.inc
+[includeIf "gitdir:~/.repository"]
+    path = ~/.config/git/user_home.inc
+[includeIf "gitdir:~/.config/**/.git"]
+    path = ~/.config/git/user_home.inc

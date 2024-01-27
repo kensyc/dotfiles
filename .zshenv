@@ -78,6 +78,3 @@ export KEYTIMEOUT=1
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 export PATH="$HOME/.config/bin:$HOME/.config/dev-tools/bin:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
 export GTK_THEME="Catppuccin-Mocha-Standard-Flamingo-Dark"
-
-# export environment variables which should not be committed
-source $HOME/.hiddenenv_work
