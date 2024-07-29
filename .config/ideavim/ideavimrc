@@ -9,13 +9,15 @@ set surround
 
 let mapleader = " "
 
-nnoremap gi :action GotoImplementation<CR>
+nnoremap gl :action GotoImplementation<CR>
 " nnoremap gD :action GotoDeclaration<CR>
 " nnoremap gd :action GotoTypeDeclaration<CR>
 nnoremap <leader>b :action Switcher<CR>
-nnoremap <leader>fp :action FindInPath<CR>
+vnoremap <leader>fp :action FindInPath<CR>
+nnoremap <leader>fp viw:action FindInPath<CR>
 nnoremap <leader>ff :action GotoFile<CR>
 nnoremap <leader>fn :action GotoClass<CR>
+nnoremap <leader>fm :action ShowBookmarks<CR>
 nnoremap / :action Find<CR>
 vnoremap / :action Find<CR>
 nnoremap \ :action Replace<CR>
@@ -24,6 +26,7 @@ nnoremap gb :action Annotate<CR>
 nnoremap gp :action GotoSuperMethod<CR>
 nnoremap gs :action ParameterInfo<CR>
 nnoremap gt :action GotoTest<CR>
+nnoremap gv :vsplit<CR>:action NextSplitter<CR>gd
 nnoremap <leader>df :action ShowErrorDescription<CR>
 nnoremap <leader>dd :action ActivateProblemsViewToolWindow<CR>
 nnoremap <leader>rn :action RenameElement<CR>
@@ -51,22 +54,19 @@ nnoremap <leader>J :action TabShiftActions.ShiftDown<CR>
 nnoremap <leader>H :action TabShiftActions.ShiftLeft<CR>
 nnoremap <leader>L :action TabShiftActions.ShiftRight<CR>
 nnoremap <leader>K :action TabShiftActions.ShiftUp<CR>
-nnoremap <leader>m :action TabShiftActions.ToggleMaximizeRestore<CR>
-nnoremap <leader>M :action tabshifter.Actions.EqualSizeSplit<CR>
-nnoremap <leader><C-m> :action ToggleDistractionFreeMode<CR>
+nnoremap <leader>M :action TabShiftActions.ToggleMaximizeRestore<CR>
+"nnoremap <leader>M :action tabshifter.Actions.EqualSizeSplit<CR>
+nnoremap <leader>m :action ToggleDistractionFreeMode<CR>
 nnoremap <leader>o gt
 nnoremap <leader>i gT
 vnoremap <leader>fo :action ReformatCode<CR>
 nnoremap <leader>fo vip :action ReformatCode<CR>
 nnoremap <leader>fb :action RecentFiles<CR>
 nnoremap <leader>q <C-w>c
+-- nnoremap <leader>q :action CloseAllEditors<CR> should be the same as <C-w>c
+nnoremap <leader>at :action EditSourceInNewWindow<CR>
+
+nnoremap <leader>ss :action StringManipulation.ToSnakeCase<CR>
 
 nnoremap gcc :action CommentByLineComment<CR>
 vnoremap gc :action CommentByLineComment<CR>
-
-" nnoremap <leader>n :NERDTree<CR>
-" nnoremap <leader>nf :NERDTreeFocus<CR>
-" nnoremap <leader>n :NERDTreeToggle<CR>
-" nnoremap <leader>nf :NERDTreeClose<CR>
-" nnoremap <vleader>nf :NERDTreeFind<CR>
-" nnoremap <leader>nf :NERDTreeRefreshRoot<CR>
