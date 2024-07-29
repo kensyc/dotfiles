@@ -12,10 +12,5 @@ MONITOR_MAIN="$main" MONITOR_SIDE="$side" polybar main >>/tmp/polybar-main.log 2
 if [[ -n "$side" ]]; then
     MONITOR_MAIN="$main" MONITOR_SIDE="$side" polybar side >>/tmp/polybar-side.log 2>&1 & disown
 fi
-MONITOR_MAIN="$main" MONITOR_SIDE="$side" polybar tray >>/tmp/polybar-tray.log 2>&1 & disown
-
-tray=$!
-
-xdo id -m -a polybar-tray && polybar-msg -p $tray cmd hide
 
 echo "Bars launched..."
