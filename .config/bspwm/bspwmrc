@@ -44,6 +44,9 @@ numlockx &
 # Launch sxhkd
 launch-sxhkd
 
+# https://github.com/baskerville/bspwm/issues/811#issuecomment-1546516752
+# fix-focusing-bug.sh &
+
 # Launch dunst
 cat $HOME/.config/dunst/dunstrc $HOME/.config/colorschemes/current/colors-dunst.dunstrc | dunst -config - &
 
