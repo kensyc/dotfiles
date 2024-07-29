@@ -23,5 +23,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source ${COLORSCHEMES}/current/colors-fzf.sh
 
+# Direnv
+eval "$(direnv hook zsh)"
 
 source ${ZDOTDIR}/themes/${ZTHEME}/post-zshrc.zsh

@@ -13,6 +13,7 @@ $git_state\
 $git_metrics\
 $git_status\
 $docker_context\
+$direnv\
 $package\
 $memory_usage\
 $env_var\
@@ -39,6 +40,12 @@ format = '$symbol '
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style) '
 # format = '  [$path]($style)[$read_only]($read_only_style) '
+
+[direnv]
+format = '[$symbol]($style) '
+style = 'blue bold'
+symbol = '󱁤 '
+disabled = false
 
 [time]
 format = '[$time]($style)'

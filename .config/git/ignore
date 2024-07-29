@@ -6,3 +6,4 @@ password_vault
 vault_password
 *.decrypt.private.php
 .phpactor.json
+.envrc
