@@ -1,3 +1,4 @@
+acpilight
 ansible
 arandr
 asp
@@ -6,9 +7,6 @@ bat
 bluez-utils
 bspwm
 btop
-catppuccin-gtk-theme-frappe
-catppuccin-gtk-theme-latte
-catppuccin-gtk-theme-macchiato
 catppuccin-gtk-theme-mocha
 code
 composer
@@ -16,8 +14,11 @@ ctags
 cups
 cups-pdf
 dhcpcd
+direnv
 docker
 docker-compose
+dpkg
+duckdb-bin
 dunst
 evince
 fd
@@ -35,8 +36,8 @@ gthumb
 htop
 imagemagick
 inetutils
-innoextract
-intel-media-driver
+insomnia-bin
+intel-gpu-tools
 intel-ucode
 jdk-openjdk
 kcachegrind
@@ -61,6 +62,7 @@ networkmanager
 npm
 ntfs-3g
 numlockx
+nvtop
 pacman-cleanup-hook
 pacman-contrib
 papirus-icon-theme
@@ -69,12 +71,13 @@ phpstorm
 phpstorm-jre
 pipewire-pulse
 polybar
+pqrs-bin
+pqrs-bin-debug
 python-docker
 python-dotenv
 python-pillow
 python-pip
 ranger
-read-edid
 reflector
 resp-app
 ripgrep
@@ -110,10 +113,10 @@ xorg-xlsfonts
 xplugd
 xsecurelock
 xss-lock
+yarn
 yay-bin
 yt-dlp
 zip
-zoom
 zsh
 zsh-completions
 xorg
