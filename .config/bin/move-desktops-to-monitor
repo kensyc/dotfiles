@@ -9,7 +9,7 @@ Usage:
     move-desktops-to-monitor <from_monitor> <to_monitor>
 
 Options:
-    from_monitor  Default DP-4
+    from_monitor  Default DP-1
     to_monitor    Default eDP-1
 EOF
 }
@@ -24,7 +24,7 @@ if [[ $[#] -ne 0 && $[#] -ne 2 ]]; then
     exit 1
 fi
 
-from_monitor="DP-4"
+from_monitor="DP-1"
 if [[ -n $1 ]]; then
     from_monitor=$1
 fi

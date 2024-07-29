@@ -6,7 +6,7 @@
 
 # autorandr -c maybe?
 
-if [[ "$(query-monitor --primary)" = "DP-4" ]]; then
+if [[ "$(query-monitor --primary)" = "DP-1" ]]; then
     xrdb -merge "$HOME/.config/X11/.Xresources.144dpi"
     xinput set-prop 10 'libinput Accel Speed' 0.2
 else
