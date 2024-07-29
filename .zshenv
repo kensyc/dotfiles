@@ -69,6 +69,6 @@ export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
 source $HOME/.config/xsecurelock/config.sh
 
 export KEYTIMEOUT=1
-export PATH="$HOME/.config/bin:$HOME/.config/dev-tools/bin:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+export PATH="$HOME/.config/bin:$HOME/work/bin:$HOME/.config/dev-tools/bin:$HOME/.config/dev-tools:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
 export GTK_THEME="Catppuccin-Mocha-Standard-Flamingo-Dark"
