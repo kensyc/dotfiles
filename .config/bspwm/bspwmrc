@@ -53,6 +53,9 @@ xsetroot -cursor_name left_ptr
 # border color
 source $HOME/.config/colorschemes/current/colors-bspwm.sh
 
+# start nm-applet
+/usr/bin/nm-applet &
+
 #
 # CONFIGURATION
 #
