@@ -35,5 +35,6 @@ btop.log
 !.config/xkb
 !.config/xplugd
 
+.config/zsh/.zcompcache/*
 .config/systemd/user/*.wants
 .config/git/user_work.inc
