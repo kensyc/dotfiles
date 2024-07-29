@@ -6,6 +6,9 @@
 
 # autorandr -c maybe?
 
+export XINITRC="$HOME/.config/X11/.xinitrc"
+export XAUTHORITY="$HOME/.config/X11/.Xauthority"
+
 if [[ "$(query-monitor --primary)" = "DP-1" ]]; then
     xrdb -merge "$HOME/.config/X11/.Xresources.144dpi"
     xinput set-prop 10 'libinput Accel Speed' 0.2
@@ -19,16 +22,14 @@ xrdb -merge "$HOME/.config/colorschemes/current/colors-x11.Xresources"
 # Set Wallpaper
 source $HOME/.config/bin/set-wallpaper &
 
+# Screensaver
+source $HOME/.config/xsecurelock/config.sh
+
 # Start compositor
 # picom &
 
-# Autostart desktop entries
-systemctl --user start autostart-bspwm.target
-
 # Two finger click for right clicking
 xinput set-prop "VEN_04F3:00 04F3:32AA Touchpad" "libinput Click Method Enabled" 0 1
-
-# keyboard stuff and lockscreen could be added to autostart-bspwm
 
 setxkbmap -config "$HOME/.config/xkb/config"
 
@@ -43,9 +44,6 @@ numlockx &
 
 # Launch sxhkd
 launch-sxhkd
-
-# https://github.com/baskerville/bspwm/issues/811#issuecomment-1546516752
-# fix-focusing-bug.sh &
 
 # Launch dunst
 cat $HOME/.config/dunst/dunstrc $HOME/.config/colorschemes/current/colors-dunst.dunstrc | dunst -config - &

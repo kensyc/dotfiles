@@ -3,26 +3,6 @@
 # Desktop environment
 export DESKTOP_ENVIRONMENT="bspwm"
 
-local desktop_environments=("gnome_x11" "gnome_wayland" "bspwm")
-
-# fallback if wrong value was entered when setting DE
-if [[ ! ${desktop_environments[@]} =~ $DE ]]; then
-    export DESKTOP_ENVIRONMENT="gnome_x11"
-fi
-
-if [[ "$DESKTOP_ENVIRONMENT" = "gnome_x11" ]]; then
-    export WINDOW_MANAGER="gnome-session"
-    export XDG_SESSION_TYPE="x11"
-    export GDK_BACKEND="x11"
-fi
-
-if [[ "$DESKTOP_ENVIRONMENT" = "gnome_wayland" ]]; then
-    export WINDOW_MANAGER="gnome-session"
-    export MOZ_ENABLE_WAYLAND=1
-    export QT_QPA_PLATORM="wayland"
-    export XDG_SESSION_TYPE="wayland"
-fi
-
 if [[ "$DESKTOP_ENVIRONMENT" = "bspwm" ]]; then
     export WINDOW_MANAGER="bspwm"
     export XDG_SESSION_TYPE="x11"
@@ -36,8 +16,6 @@ export ZTHEME="starship"
 export TERMINAL="kitty"
 
 # default directories
-export XINITRC="$HOME/.config/X11/.xinitrc"
-export XAUTHORITY="$HOME/.config/X11/.Xauthority"
 export ZDOTDIR="$HOME/.config/zsh"
 export COLORSCHEMES="$HOME/.config/colorschemes"
 export WALLPAPERS="$HOME/.wallpaper"
@@ -64,9 +42,6 @@ export DOCKER_CONFIG="$XDG_DATA_HOME/docker"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
-
-# Screensaver
-source $HOME/.config/xsecurelock/config.sh
 
 export KEYTIMEOUT=1
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
