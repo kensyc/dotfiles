@@ -1,11 +1,18 @@
 #!/bin/zsh
 
 # Desktop environment
-export DESKTOP_ENVIRONMENT="bspwm"
+# export DESKTOP_ENVIRONMENT="bspwm"
+export DESKTOP_ENVIRONMENT="hyprland"
 
-if [[ "$DESKTOP_ENVIRONMENT" = "bspwm" ]]; then
-    export WINDOW_MANAGER="bspwm"
+if [[ $DESKTOP_ENVIRONMENT = "bspwm" ]]; then
     export XDG_SESSION_TYPE="x11"
+    export XINITRC="$HOME/.config/X11/.xinitrc"
+    export XAUTHORITY="$HOME/.config/X11/.Xauthority"
+fi
+
+if [[ $DESKTOP_ENVIRONMENT = "hyprland" ]]; then
+    export MOZ_ENABLE_WAYLAND=1
+    export ELECTRON_OZONE_PLATFORM_HINT=wayland
 fi
 
 # default programs
@@ -33,6 +40,9 @@ export GOPATH="$XDG_DATA_HOME"/go
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_DATA_HOME/java"
 
+# FZF
+export FZF_COMPLETION_TRIGGER=','
+
 # NPM
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/.npmrc"
 export NPM_CONFIG_PREFIX="$XDG_DATA_HOME/npm"
@@ -43,7 +53,8 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
 
-export KEYTIMEOUT=1
+export KEYTIMEOUT=20
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 export PATH="$HOME/.config/bin:$HOME/work/bin:$HOME/.config/dev-tools/bin:$HOME/.config/dev-tools:$HOME/.local/bin:$HOME/.local/share/npm/bin:$PATH"
-export GTK_THEME="Catppuccin-Mocha-Standard-Flamingo-Dark"
+export LIBVA_DRIVER_NAME="iHD"
+export ANV_VIDEO_DECODE=1
