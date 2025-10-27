@@ -1,10 +1,16 @@
 # KEYBINDS
 bindkey -v							                    # VI mode
 
-bindkey -M viins '^[i' vi-cmd-mode				        # go into insert mode
-bindkey -M vicmd 'k'  history-substring-search-up		# pressing up   will only go through commands matching current line
-bindkey -M vicmd 'j'  history-substring-search-down		# pressing down will only go through commands matching current line
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
 
-bindkey '^[[A' history-substring-search-up			    # pressing up   will only go through commands matching current line
-bindkey '^[[B' history-substring-search-down			# pressing down will only go through commands matching current line
+bindkey -M viins '^[i' vi-cmd-mode				        # go into insert mode
+bindkey -M vicmd 'k'  up-line-or-beginning-search		# pressing up   will only go through commands matching current line
+bindkey -M vicmd 'j'  down-line-or-beginning-search		# pressing down will only go through commands matching current line
+
 bindkey '^?' backward-delete-char 				        # fix backspace after going from normal mode to insert mode
+
