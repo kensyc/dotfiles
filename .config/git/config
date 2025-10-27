@@ -1,26 +1,62 @@
+[alias]
+  forget="! git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+; graph = log --all --graph --decorate --oneline
+; l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[branch]
+  sort = -committerdate
+[column]
+;  ui = auto
+[commit]
+  verbose = true
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RF
+  whitespace = space-before-tab,space-in-empty-line,trailing-space
+; space-before-tab,space-in-empty-line,indent-with-non-tab,trailing-space
+;  compression = 9
+[diff]
+  algorithm = histogram
+[help]
+  autocorrect = prompt
+[include]
+  path = ~/.config/git/user_work.inc
+[includeIf "gitdir:~/private/**/.git"]
+  path = ~/.config/git/user_home.inc
+[includeIf "gitdir:~/.repository"]
+  path = ~/.config/git/user_home.inc
+[includeIf "gitdir:~/.config/**/.git"]
+  path = ~/.config/git/user_home.inc
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[maintenance]
+  auto = true
+  strategy = incremental
 [pull]
 	rebase = true
 [push]
 	autoSetupRemote = true
-[diff]
-    tool = kitty
-    guitool = kitty.gui
-[difftool]
-    prompt = false
-    trustExitCode = true
-[difftool "kitty"]
-    cmd = kitty +kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
-[alias]
-    forget="! git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
-[init]
-	defaultBranch = main
-[include]
-    path = ~/.config/git/user_work.inc
-[includeIf "gitdir:~/private/**/.git"]
-    path = ~/.config/git/user_home.inc
-[includeIf "gitdir:~/.repository"]
-    path = ~/.config/git/user_home.inc
-[includeIf "gitdir:~/.config/**/.git"]
-    path = ~/.config/git/user_home.inc
+[tag]
+  sort = -version:refname
+; [diff]
+;     tool = kitty
+;     guitool = kitty.gui
+; [difftool]
+;     prompt = false
+;     trustExitCode = true
+; [difftool "kitty"]
+;     cmd = kitty +kitten diff $LOCAL $REMOTE
+; [difftool "kitty.gui"]
+;     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+; [difftool]
+;     prompt = true
+; [diff]
+;     tool = nvimdiff
+; [difftool "nvimdiff"]
+;     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+;[difftool]
+;    prompt = true
+;[diff]
+;    tool = nvimdiffview
+;[difftool "nvimdiffview"]
+;    cmd = "nvim +DiffviewOpen"

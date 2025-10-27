@@ -7,3 +7,5 @@ vault_password
 *.decrypt.private.php
 .phpactor.json
 .envrc
+.cursorignore
+node_modules/*
