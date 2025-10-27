@@ -4,10 +4,7 @@
 # AUTOSTART
 #
 
-# autorandr -c maybe?
-
-export XINITRC="$HOME/.config/X11/.xinitrc"
-export XAUTHORITY="$HOME/.config/X11/.Xauthority"
+autorandr -c
 
 if [[ "$(query-monitor --primary)" = "DP-1" ]]; then
     xrdb -merge "$HOME/.config/X11/.Xresources.144dpi"
@@ -56,6 +53,10 @@ source $HOME/.config/colorschemes/current/colors-bspwm.sh
 
 # start nm-applet
 /usr/bin/nm-applet &
+
+# automatically switch audio device when (un)plugging something
+# todo: use pipewire-pulse.conf instead
+pactl load-module module-switch-on-connect
 
 #
 # CONFIGURATION

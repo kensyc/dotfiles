@@ -15,7 +15,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # lock screen
-super + alt + Print
+super + Delete
 	xset s activate
 
 # Screenshot tool
@@ -46,13 +46,16 @@ super + m
 super + e
 	bspc node $(bspc query -N -n -n .!leaf || echo @/) -R 90
 
+super + shift + e
+    bspc node @parent -R 90
+
 #
 # state/flags
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,f}
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 # set the node flags
 super + alt + {m,x,y,z}
@@ -66,8 +69,8 @@ super + alt + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-super + a; {h,j,k,l}
-	bspc node -s {west,south,north,east}
+# super + a; {h,j,k,l}
+# 	bspc node -s {west,south,north,east}
 
 super + {p,n}
     bspc monitor -f {prev,next}
@@ -83,8 +86,8 @@ super + alt + {p,n}
     bspc desktop -m {prev,next} --follow
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,comma,period}
+# 	bspc node -f @{parent,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
@@ -95,16 +98,16 @@ super + {i,o}
 	bspc desktop -f {prev,next}.local
 
 # focus the older or newer node in the focus history
-super + {u,d}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {u,d}
+# 	bspc wm -h off; \
+# 	bspc node {older,newer} -f; \
+# 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {1-9,0}
+super + {a,s,1,2,3,4,comma,period}
     bspc desktop -f {1.local, 2.local, 3.local, 4.local, 5.local, 6.local, 7.local, 8.local}
 
-super + shift + {1-9,0}
+super + shift + {a,s,1,2,3,4,comma,period}
 	bspc node -d {1.local, 2.local, 3.local, 4.local, 5.local, 6.local, 7.local, 8.local} --follow
 
 #
