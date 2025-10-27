@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window,projects:list-projects.sh";
+    modi: "drun,run,window,projects:list-projects.sh";
     lines: 5;
     font: "JetBrainsMono Nerd Font 14";
     show-icons: true;
@@ -19,8 +19,9 @@ configuration{
     kb-row-left: "Alt+h,Control+Page_Up";
     kb-row-right: "Alt+l,Control+Page_Down";
     kb-row-up: "Alt+k,Up,Control+p";
-    kb-row-down: "Alt+j,Down,Control+n";
+    kb-row-down: "Alt+j,Down,Control+n"; /*  https://github.com/davatorium/rofi/issues/2095*/
 }
+
 
 @theme "~/.config/colorschemes/current/colors-rofi.rasi"
 
